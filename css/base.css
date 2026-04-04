@@ -279,10 +279,11 @@ strong {
 /* ── Mobile Menu ──────────────────────────────────────────── */
 .nav-mobile-menu {
   display: none;
-  position: absolute;
+  position: fixed;
   top: var(--nav-height);
   left: 0;
   right: 0;
+  bottom: 0;
   background-color: var(--bg-base);
   border-bottom: 1px solid var(--border);
   padding: var(--sp-4);
@@ -290,6 +291,8 @@ strong {
   flex-direction: column;
   gap: var(--sp-3);
   box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .nav-mobile-menu.open {
   display: flex;
