@@ -1,0 +1,660 @@
+/* ============================================================
+   UMANAH INSTITUTE — Base Stylesheet
+   Reset, typography, layout utilities, nav, footer, buttons.
+   Shared across all pages — import after tokens.css.
+   ============================================================ */
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-outer);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--navy);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--navy-hover);
+}
+
+ul {
+  list-style: none;
+}
+
+/* ── Boxed Site Wrapper ───────────────────────────────────── */
+#site-box {
+  max-width: var(--box-width);
+  margin: 0 auto;
+  background-color: var(--bg-base);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ── Typography ───────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem);     line-height: 1.15; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem);   line-height: 1.2; }
+h3 { font-size: clamp(1.1rem, 2.5vw, 1.3rem); line-height: 1.25; }
+h4 { font-size: 1.05rem; line-height: 1.3; }
+
+p {
+  max-width: 68ch;
+  color: var(--text-secondary);
+}
+
+strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ── Layout Utilities ─────────────────────────────────────── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: var(--pad-desktop);
+  padding-right: var(--pad-desktop);
+}
+
+.section {
+  padding-top: var(--sec-pad-desktop);
+  padding-bottom: var(--sec-pad-desktop);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* ── Section Label (eyebrow above headings) ───────────────── */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+}
+
+.section-heading {
+  margin-bottom: var(--sp-4);
+}
+
+.section-lead {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 62ch;
+  margin-bottom: var(--sp-5);
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--btn-height);
+  padding: 0 var(--sp-4);
+  border-radius: var(--btn-radius);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  white-space: nowrap;
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background-color: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.btn-primary:hover {
+  background-color: var(--navy-hover);
+  border-color: var(--navy-hover);
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+.btn-secondary:hover {
+  background-color: var(--navy-tint);
+  color: var(--navy);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--navy);
+  border-color: transparent;
+  padding: 0 var(--sp-2);
+  font-size: 0.875rem;
+}
+.btn-ghost:hover {
+  color: var(--navy-hover);
+  text-decoration: underline;
+}
+
+/* ── Sticky Navigation ────────────────────────────────────── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background-color: rgba(247, 245, 240, 0.97);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.nav-wordmark {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+  text-decoration: none;
+  margin-right: var(--sp-5);
+}
+.nav-wordmark:hover {
+  color: var(--navy);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.15s;
+  text-decoration: none;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--navy);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+/* In the nav, secondary CTA is text-link style — no border — to save horizontal space */
+.nav-actions .btn-secondary {
+  background: none;
+  border-color: transparent;
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+  padding: 0 var(--sp-2);
+  height: auto;
+}
+.nav-actions .btn-secondary:hover {
+  background: none;
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Hamburger Button ─────────────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.nav-hamburger span {
+  display: block;
+  height: 1.5px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ── Mobile Menu ──────────────────────────────────────────── */
+.nav-mobile-menu {
+  display: none;
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  background-color: var(--bg-base);
+  border-bottom: 1px solid var(--border);
+  padding: var(--sp-4);
+  z-index: 99;
+  flex-direction: column;
+  gap: var(--sp-3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+.nav-mobile-menu.open {
+  display: flex;
+}
+.nav-mobile-menu .nav-link {
+  font-size: 1rem;
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--border);
+}
+.nav-mobile-menu .nav-link:last-of-type {
+  border-bottom: none;
+}
+.nav-mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding-top: var(--sp-3);
+}
+.nav-mobile-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── Unified Footer ───────────────────────────────────────── */
+.site-footer {
+  background-color: var(--bg-base);
+  border-top: 1px solid var(--border);
+  padding: var(--sp-8) 0 var(--sp-6);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sp-6);
+}
+
+.footer-wordmark {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-2);
+}
+
+.footer-tagline {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  max-width: 36ch;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  align-items: flex-end;
+}
+.footer-links a {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  transition: color 0.15s;
+  text-decoration: none;
+}
+.footer-links a:hover {
+  color: var(--navy);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: var(--sp-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-privacy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-decoration: none;
+}
+.footer-privacy:hover {
+  color: var(--navy);
+}
+
+/* ── Fade-in Entrance Animation ───────────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Checklist Items (shared: convening + homepage) ───────── */
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--border);
+}
+.checklist-item:last-child {
+  border-bottom: none;
+}
+.checklist-item .check-icon {
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--navy);
+}
+.checklist-item span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* ── Sector Tags (shared) ─────────────────────────────────── */
+.sectors-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+  justify-content: center;
+}
+
+.sector-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 1 auto;
+  background-color: var(--navy-tint);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+/* ── Mission / Principle Blocks (shared) ──────────────────── */
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+  margin-top: var(--sp-6);
+}
+
+.mission-block {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: var(--card-pad);
+  box-shadow: var(--card-shadow);
+  text-align: center;
+}
+
+.mission-block .block-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+  display: block;
+  text-align: center;
+}
+
+.mission-block .block-statement {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* ── Leadership Card (shared) ─────────────────────────────── */
+.leadership-section {
+  background-color: var(--bg-base);
+  border-top: 1px solid var(--border);
+}
+
+.leadership-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-5);
+}
+
+.leadership-inner .section-label {
+  display: block;
+  text-align: center;
+}
+
+.leadership-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--sp-7) var(--sp-8);
+  max-width: 580px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  text-align: center;
+}
+
+.leadership-body {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 48ch;
+  margin: 0;
+  text-align: center;
+}
+
+.leadership-name-link {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(11,31,59,0.35);
+  transition: color 0.18s, text-decoration-color 0.18s;
+}
+.leadership-name-link:hover {
+  color: var(--navy-hover);
+  text-decoration-color: var(--navy-hover);
+}
+.leadership-name-link strong {
+  color: inherit;
+}
+
+.leadership-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--sp-1);
+  padding: 9px 20px;
+  border: 1.5px solid var(--navy);
+  border-radius: 8px;
+  color: var(--navy);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.18s, color 0.18s;
+  text-decoration: none;
+}
+.leadership-linkedin:hover {
+  background-color: var(--navy-tint);
+  color: var(--navy-hover);
+}
+
+/* ── Responsive — Tablet (≤ 1024px) ──────────────────────── */
+@media (max-width: 1024px) {
+  .container {
+    padding-left: var(--pad-tablet);
+    padding-right: var(--pad-tablet);
+  }
+  .section {
+    padding-top: var(--sec-pad-tablet);
+    padding-bottom: var(--sec-pad-tablet);
+  }
+  .mission-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Responsive — Mobile (≤ 768px) ───────────────────────── */
+@media (max-width: 768px) {
+  .container {
+    padding-left: var(--pad-mobile);
+    padding-right: var(--pad-mobile);
+  }
+  .section {
+    padding-top: var(--sec-pad-mobile);
+    padding-bottom: var(--sec-pad-mobile);
+  }
+
+  /* Nav */
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+  .nav-hamburger {
+    display: flex;
+  }
+
+  /* Global text centering */
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-label,
+  .hero-eyebrow,
+  .block-label {
+    display: block;
+    text-align: center;
+  }
+
+  /* Mission grid */
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+  .mission-block {
+    text-align: center;
+  }
+  .mission-block .block-statement {
+    text-align: center;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-4);
+    text-align: center;
+  }
+  .footer-wordmark,
+  .footer-tagline {
+    text-align: center;
+  }
+  .footer-links {
+    align-items: center;
+    text-align: center;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-2);
+    text-align: center;
+  }
+
+  /* Leadership */
+  .leadership-card {
+    padding: var(--sp-5) var(--sp-4);
+  }
+
+  /* Checklist */
+  .checklist-item {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .checklist-item span {
+    text-align: left;
+    flex: 1;
+  }
+}

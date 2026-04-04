@@ -1,0 +1,73 @@
+/* ============================================================
+   UMANAH INSTITUTE — Design Tokens
+   Shared across all three pages.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Backgrounds ──────────────────────────────────────── */
+  --bg-base:          #F7F5F0;   /* warm off-white — primary page background */
+  --bg-outer:         #E8E5DE;   /* stone — body background (outside boxed site) */
+  --bg-surface:       #FFFFFF;   /* cards, sections on base */
+  --bg-navy-wash:     rgba(11, 31, 59, 0.04); /* subtle navy tint for AE sections */
+
+  /* ── Navy Accent ──────────────────────────────────────── */
+  --navy:             #0B1F3B;
+  --navy-hover:       #0A2A52;
+  --navy-tint:        #E9EEF6;
+  --navy-mid:         #15304F;   /* slightly lighter navy for AE section alternates */
+
+  /* ── Text ─────────────────────────────────────────────── */
+  --text-primary:     #111827;
+  --text-secondary:   #374151;
+  --text-muted:       #6B7280;
+
+  /* ── Borders ──────────────────────────────────────────── */
+  --border:           #E5E7EB;
+  --border-navy:      rgba(11, 31, 59, 0.15); /* slightly stronger border for AE page */
+
+  /* ── Status ───────────────────────────────────────────── */
+  --success:          #14532D;
+
+  /* ── Typography ───────────────────────────────────────── */
+  --font-heading:     'Libre Baskerville', Georgia, serif;
+  --font-body:        'Inter', system-ui, sans-serif;
+
+  /* ── Spacing Scale (8px base) ─────────────────────────── */
+  --sp-1:   4px;
+  --sp-2:   8px;
+  --sp-3:   16px;
+  --sp-4:   24px;
+  --sp-5:   32px;
+  --sp-6:   40px;
+  --sp-7:   48px;
+  --sp-8:   64px;
+  --sp-9:   80px;
+  --sp-10:  96px;
+
+  /* ── Layout ───────────────────────────────────────────── */
+  --max-width:        1120px;
+  --box-width:        1100px;
+  --box-shadow:       0 2px 24px rgba(0,0,0,0.08), 0 0 1px rgba(0,0,0,0.04);
+  --pad-mobile:       24px;
+  --pad-tablet:       32px;
+  --pad-desktop:      40px;
+
+  /* ── Section Padding ──────────────────────────────────── */
+  --sec-pad-desktop:  80px;
+  --sec-pad-tablet:   56px;
+  --sec-pad-mobile:   40px;
+
+  /* ── Cards ────────────────────────────────────────────── */
+  --card-radius:      14px;
+  --card-pad:         24px;
+  --card-shadow:      0 1px 4px rgba(0,0,0,0.07), 0 0 1px rgba(0,0,0,0.04);
+
+  /* ── Buttons ──────────────────────────────────────────── */
+  --btn-height:       46px;
+  --btn-radius:       10px;
+
+  /* ── Nav ──────────────────────────────────────────────── */
+  --nav-height:       64px;
+}

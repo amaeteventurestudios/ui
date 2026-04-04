@@ -1,0 +1,622 @@
+/* ============================================================
+   UMANAH INSTITUTE — Convening Page Styles
+   Section-specific layouts for /convening.
+   Import after tokens.css and base.css.
+   ============================================================ */
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  min-height: clamp(480px, 60vh, 720px);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  padding-top: clamp(var(--sp-7), 6vh, var(--sp-10));
+  padding-bottom: clamp(var(--sp-7), 6vh, var(--sp-10));
+}
+
+.hero .container {
+  width: 100%;
+}
+
+.hero-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-4);
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 3.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-2);
+  color: var(--text-primary);
+}
+
+.hero-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: var(--sp-5);
+  display: block;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 60ch;
+  margin-bottom: var(--sp-4);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-4);
+}
+
+.hero-trust {
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: block;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-trust::before {
+  content: '— ';
+}
+
+/* ── The Structural Problem ───────────────────────────────── */
+.problem-section {
+  background-color: var(--bg-base);
+}
+
+.problem-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-10);
+  align-items: start;
+}
+
+.problem-intro p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--sp-4);
+  max-width: 54ch;
+}
+
+.problem-intro .constraint-statement {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-4);
+}
+
+.constraint-list {
+  margin-bottom: var(--sp-5);
+}
+
+.constraint-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-2) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+.constraint-list li:last-child {
+  border-bottom: none;
+}
+.constraint-list li .icon {
+  color: var(--navy);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.problem-callout {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: var(--card-pad);
+  box-shadow: var(--card-shadow);
+}
+
+.problem-callout .callout-stat {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: var(--sp-3);
+  text-align: center;
+  max-width: 100%;
+}
+
+.problem-callout .callout-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 100%;
+  margin-bottom: var(--sp-4);
+}
+
+.callout-closing {
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border);
+}
+.callout-closing p {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--navy);
+  max-width: 100%;
+  line-height: 1.5;
+  margin-bottom: var(--sp-2);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── What This Forum Does ─────────────────────────────────── */
+.forum-section {
+  background-color: var(--bg-surface);
+}
+
+.forum-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.forum-content {
+  width: 100%;
+  text-align: center;
+}
+
+.forum-content .section-label,
+.forum-content .section-heading,
+.forum-content .section-lead {
+  text-align: center;
+}
+
+.forum-content .section-lead {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 58ch;
+}
+
+.forum-content > p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.participants-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+  width: 100%;
+}
+
+.participant-card {
+  background-color: var(--bg-base);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: var(--sp-3) var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--sp-2);
+}
+
+.participant-card .icon {
+  color: var(--navy);
+  flex-shrink: 0;
+}
+
+.participant-card span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.forum-focus {
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  width: 100%;
+}
+.forum-focus p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 100%;
+  margin-bottom: var(--sp-2);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.forum-cta-block {
+  background-color: var(--bg-base);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: var(--card-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-4);
+  width: 100%;
+  margin-top: var(--sp-5);
+}
+
+.forum-cta-block h3 {
+  font-size: 1.15rem;
+  margin-bottom: var(--sp-2);
+  text-align: center;
+}
+.forum-cta-block p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* ── Forum Structure ──────────────────────────────────────── */
+.structure-section {
+  background-color: var(--bg-base);
+}
+
+.structure-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-10);
+  align-items: start;
+}
+
+.structure-left .format-checklist,
+.structure-participation .format-checklist {
+  display: flex;
+  flex-direction: column;
+}
+
+.structure-participation {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: var(--card-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.structure-participation h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--sp-3);
+  text-align: center;
+}
+.structure-participation .format-checklist {
+  width: 100%;
+  margin-top: 0;
+}
+
+/* ── Core Areas of Work ───────────────────────────────────── */
+.areas-section {
+  background-color: var(--bg-surface);
+  text-align: center;
+}
+
+.areas-section .section-label,
+.areas-section .section-heading {
+  display: block;
+  text-align: center;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+}
+
+.area-card {
+  background-color: var(--bg-base);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: var(--card-pad);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-4);
+}
+
+.area-icon {
+  width: 36px;
+  height: 36px;
+  background-color: var(--navy-tint);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--navy);
+}
+
+.area-content h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  font-family: var(--font-body);
+}
+.area-content p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+/* ── Format ───────────────────────────────────────────────── */
+.format-section {
+  background-color: var(--bg-base);
+}
+
+.format-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-10);
+  align-items: start;
+}
+
+.format-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.format-participation {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: var(--card-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.format-participation h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--sp-3);
+  text-align: center;
+}
+.format-participation p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 100%;
+  margin-bottom: var(--sp-4);
+  text-align: center;
+}
+.format-participation .note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: var(--sp-2);
+  border-top: 1px solid var(--border);
+  padding-top: var(--sp-3);
+  max-width: 100%;
+  text-align: center;
+}
+
+/* ── Mission & Vision ─────────────────────────────────────── */
+.mission-section {
+  background-color: var(--bg-surface);
+  text-align: center;
+}
+.mission-section .section-label,
+.mission-section .section-heading {
+  display: block;
+  text-align: center;
+}
+
+/* ── About ────────────────────────────────────────────────── */
+.about-section {
+  background-color: var(--bg-base);
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--sp-10);
+  align-items: start;
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.about-body .section-label,
+.about-body .section-heading {
+  text-align: center;
+  display: block;
+}
+.about-body p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 56ch;
+  margin-bottom: var(--sp-4);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-cta-block {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  padding: var(--card-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.about-cta-block h3 {
+  font-size: 1.05rem;
+  margin-bottom: var(--sp-3);
+  text-align: center;
+  color: var(--text-primary);
+}
+.about-cta-block p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 100%;
+  margin-bottom: var(--sp-4);
+  text-align: center;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .problem-layout,
+  .forum-layout,
+  .format-layout,
+  .structure-layout,
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: var(--sp-7);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: var(--sp-7);
+    padding-bottom: var(--sp-7);
+    min-height: auto;
+  }
+  .hero-body,
+  .hero-subtitle,
+  .hero-trust {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .section-lead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .problem-intro p,
+  .problem-intro .constraint-statement {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .constraint-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .constraint-list li {
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .participants-grid {
+    grid-template-columns: 1fr;
+  }
+  .participant-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr;
+  }
+  .area-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .area-content h4,
+  .area-content p {
+    text-align: center;
+  }
+
+  .about-body p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sectors-list {
+    justify-content: center;
+  }
+  .about-body .btn {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  .about-cta-block p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about-cta-block .btn {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  .format-participation p,
+  .format-participation .note {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .format-participation .btn {
+    display: flex;
+    margin: 0 auto;
+  }
+}

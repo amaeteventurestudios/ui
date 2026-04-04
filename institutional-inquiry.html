@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Institutional Inquiry — Umanah Institute</title>
+  <meta name="description" content="Submit an institutional inquiry to Umanah Institute. For participation, research briefings, convening, or other inquiries." />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <style>
+    /* ── Form page layout ─────────────────────────────────── */
+    .form-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-page main {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: var(--sp-9) var(--pad-mobile);
+    }
+    .form-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      padding: var(--sp-7) var(--sp-8);
+      width: 100%;
+      max-width: 560px;
+    }
+    .form-header {
+      margin-bottom: var(--sp-6);
+      padding-bottom: var(--sp-5);
+      border-bottom: 1px solid var(--border);
+    }
+    .form-header .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      margin-bottom: var(--sp-4);
+      transition: color 0.15s;
+      text-decoration: none;
+    }
+    .form-header .back-link:hover { color: var(--navy); }
+    .form-header h1 { font-size: 1.75rem; margin-bottom: var(--sp-2); }
+    .form-header p  { font-size: 0.9rem; color: var(--text-muted); max-width: 48ch; }
+    .form-body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      background-color: var(--bg-base);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      width: 100%;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(11, 31, 59, 0.08);
+    }
+    .form-group textarea { min-height: 120px; resize: vertical; line-height: 1.6; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--text-muted); }
+    .form-submit { margin-top: var(--sp-3); }
+    .form-submit .btn { width: 100%; height: 48px; font-size: 0.95rem; }
+    .field-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      display: block;
+    }
+    .form-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--sp-4);
+      padding: var(--sp-8) 0;
+    }
+    .form-success.visible { display: flex; }
+    .success-icon {
+      width: 52px; height: 52px;
+      background-color: #F0FDF4;
+      border: 1.5px solid #BBF7D0;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #16a34a;
+    }
+    .form-success h2 { font-size: 1.25rem; color: var(--text-primary); }
+    .form-success p  { font-size: 0.9rem; color: var(--text-muted); max-width: 36ch; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-3);
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (max-width: 560px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: var(--sp-5) var(--sp-4); }
+    }
+  </style>
+</head>
+<body class="form-page">
+<div id="site-box">
+
+  <!-- ============================================================
+       NAVIGATION — minimal form-page header
+       ============================================================ -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-wordmark">Umanah Institute</a>
+
+      <div class="nav-actions">
+        <a href="request-participation.html" class="btn btn-primary">Request Participation</a>
+        <a href="institutional-inquiry.html" class="btn btn-secondary nav-active-action">Institutional Inquiry</a>
+      </div>
+
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+    <div class="nav-mobile-actions">
+      <a href="request-participation.html" class="btn btn-primary">Request Participation</a>
+      <a href="institutional-inquiry.html" class="btn btn-secondary">Institutional Inquiry</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FORM MAIN
+       ============================================================ -->
+  <main>
+    <div class="form-card">
+
+      <!-- Header -->
+      <div class="form-header">
+        <a href="index.html" class="back-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to Umanah Institute
+        </a>
+        <h1>Institutional Inquiry</h1>
+        <p>For participation inquiries, research briefing requests, convening questions, or other institutional matters. We will respond if there is a fit.</p>
+      </div>
+
+      <!-- Success State (hidden by default) -->
+      <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+        <div class="success-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M4 11l5 5 9-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2>Thank you.</h2>
+        <p>We will respond if there is a fit.</p>
+        <a href="index.html" class="btn btn-secondary" style="margin-top: var(--sp-2);">Return to homepage</a>
+      </div>
+
+      <!-- Form -->
+      <form class="form-body" id="inquiryForm" novalidate>
+
+        <div class="form-group">
+          <label for="fullName">Full Name <span aria-hidden="true" style="color: #DC2626;">*</span></label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Your full name"
+            autocomplete="name"
+            required
+          />
+          <span class="field-error" id="fullNameError" role="alert" style="font-size:0.8rem; color:#DC2626; display:none;"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="organization">Organization <span aria-hidden="true" style="color: #DC2626;">*</span></label>
+          <input
+            type="text"
+            id="organization"
+            name="organization"
+            placeholder="Institution or organization name"
+            autocomplete="organization"
+            required
+          />
+          <span class="field-error" id="organizationError" role="alert" style="font-size:0.8rem; color:#DC2626; display:none;"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address <span aria-hidden="true" style="color: #DC2626;">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="your@institution.edu"
+            autocomplete="email"
+            required
+          />
+          <span class="field-error" id="emailError" role="alert" style="font-size:0.8rem; color:#DC2626; display:none;"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+1 (555) 000-0000"
+              autocomplete="tel"
+            />
+          </div>
+          <div class="form-group">
+            <label for="roleTitle">Role / Title</label>
+            <input
+              type="text"
+              id="roleTitle"
+              name="roleTitle"
+              placeholder="e.g. Director of Technology Transfer"
+              autocomplete="organization-title"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="websiteLinkedin">Website or LinkedIn Profile</label>
+          <input
+            type="url"
+            id="websiteLinkedin"
+            name="websiteLinkedin"
+            placeholder="https://"
+            autocomplete="url"
+          />
+          <span class="field-hint">Optional — helps us understand your institutional context.</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sector">Sector</label>
+            <select id="sector" name="sector">
+              <option value="" disabled selected>Select a sector</option>
+              <option value="Space">Space &amp; Aerospace</option>
+              <option value="Defense">Defense Systems</option>
+              <option value="Energy">Energy Infrastructure</option>
+              <option value="Mobility">Mobility Platforms</option>
+              <option value="Bio">Bio &amp; Pharma Systems</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="preferredContact">Preferred Contact Method</label>
+            <select id="preferredContact" name="preferredContact">
+              <option value="" disabled selected>Select preference</option>
+              <option value="Email">Email</option>
+              <option value="Phone">Phone</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inquiryType">Inquiry Type <span aria-hidden="true" style="color: #DC2626;">*</span></label>
+          <select id="inquiryType" name="inquiryType" required>
+            <option value="" disabled selected>Select an inquiry type</option>
+            <option value="Participation">Participation</option>
+            <option value="Research">Research</option>
+            <option value="Convening">Convening</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="field-error" id="inquiryTypeError" role="alert" style="font-size:0.8rem; color:#DC2626; display:none;"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message <span aria-hidden="true" style="color: #DC2626;">*</span></label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Describe your inquiry. Please include context about your institution and the nature of your interest..."
+            rows="5"
+            required
+          ></textarea>
+          <span class="field-error" id="messageError" role="alert" style="font-size:0.8rem; color:#DC2626; display:none;"></span>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            <span id="submitText">Submit Inquiry</span>
+            <span id="submitSpinner" style="display:none; margin-left: 8px;">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="animation: spin 0.8s linear infinite;">
+                <circle cx="8" cy="8" r="6" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+                <path d="M8 2a6 6 0 016 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <p class="footer-wordmark">Umanah Institute</p>
+            <p class="footer-tagline">Advancing resilient infrastructure deployment under real-world constraint.</p>
+          </div>
+          <div class="footer-links">
+            <a href="convening.html">Convening</a>
+            <a href="applied-engineering.html">Applied Engineering</a>
+            <a href="institutional-inquiry.html">Contact &amp; Institutional Inquiry</a>
+            <a href="request-participation.html">Request Participation</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">&copy; Umanah Institute. All rights reserved.</p>
+          <a href="privacy-policy.html" class="footer-privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
+</div><!-- /#site-box -->
+</body>
+</html>
