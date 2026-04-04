@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — Umanah Institute</title>
+  <meta name="description" content="Your submission has been received by Umanah Institute." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .thankyou-main {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--sp-9) var(--pad-mobile);
+    }
+    .thankyou-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
+      padding: var(--sp-8) var(--sp-7);
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-4);
+    }
+    .thankyou-icon {
+      width: 56px;
+      height: 56px;
+      background: #F0FDF4;
+      border: 1.5px solid #BBF7D0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #14532D;
+      flex-shrink: 0;
+    }
+    .thankyou-card h1 {
+      font-size: 1.75rem;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.2;
+    }
+    .thankyou-type {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--navy-tint);
+      border: 1px solid #C7D4E8;
+      border-radius: 6px;
+      padding: 4px 12px;
+      margin-bottom: var(--sp-1);
+    }
+    .thankyou-card p {
+      font-size: 0.975rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 42ch;
+      margin: 0 auto;
+    }
+    .thankyou-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--border);
+      margin: var(--sp-1) auto;
+    }
+    .thankyou-note {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .thankyou-actions {
+      display: flex;
+      gap: var(--sp-3);
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: var(--sp-2);
+    }
+    @media (max-width: 560px) {
+      .thankyou-card {
+        padding: var(--sp-6) var(--sp-4);
+      }
+      .thankyou-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body class="form-page">
+<div id="site-box">
+
+  <!-- NAV -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-wordmark">Umanah Institute</a>
+      <div class="nav-actions">
+        <a href="request-participation.html" class="btn btn-primary">Request Participation</a>
+        <a href="institutional-inquiry.html" class="btn btn-secondary">Institutional Inquiry</a>
+      </div>
+      <button class="nav-hamburger" id="hamburgerBtn" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+    <div class="nav-mobile-actions">
+      <a href="request-participation.html" class="btn btn-primary">Request Participation</a>
+      <a href="institutional-inquiry.html" class="btn btn-secondary">Institutional Inquiry</a>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main>
+    <div class="thankyou-main">
+      <div class="thankyou-card">
+
+        <!-- Icon -->
+        <div class="thankyou-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <path d="M5 13l6 6L21 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Type badge — set dynamically by JS -->
+        <span class="thankyou-type" id="formTypeBadge">Submission Received</span>
+
+        <!-- Heading -->
+        <h1>Thank you.</h1>
+
+        <!-- Message — swapped by JS based on form type -->
+        <p id="thankYouMessage">Your submission has been received and will be reviewed.</p>
+
+        <div class="thankyou-divider"></div>
+
+        <p class="thankyou-note" id="thankYouNote">Submissions are reviewed periodically. Not all inquiries will receive a response.</p>
+
+        <!-- Actions -->
+        <div class="thankyou-actions">
+          <a href="index.html" class="btn btn-primary">Return to homepage</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div>
+            <p class="footer-wordmark">Umanah Institute</p>
+            <p class="footer-tagline">Advancing resilient infrastructure deployment under real-world constraint.</p>
+          </div>
+          <div class="footer-links">
+            <a href="convening.html">Convening</a>
+            <a href="applied-engineering.html">Applied Engineering</a>
+            <a href="institutional-inquiry.html">Contact &amp; Institutional Inquiry</a>
+            <a href="request-participation.html">Request Participation</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copy">&copy; Umanah Institute. All rights reserved.</p>
+          <a href="privacy-policy.html" class="footer-privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Read ?type= param to customise the message
+    (function () {
+      const params  = new URLSearchParams(window.location.search);
+      const type    = params.get('type') || 'participation';
+      const badge   = document.getElementById('formTypeBadge');
+      const msg     = document.getElementById('thankYouMessage');
+      const note    = document.getElementById('thankYouNote');
+
+      if (type === 'inquiry') {
+        badge.textContent = 'Institutional Inquiry';
+        msg.textContent   = 'Your institutional inquiry has been received.';
+        note.textContent  = 'We will respond if there is a fit.';
+      } else {
+        badge.textContent = 'Participation Request';
+        msg.textContent   = 'Your participation request has been received.';
+        note.textContent  = 'Submissions are reviewed periodically. Not all requests will receive a response.';
+      }
+    })();
+  </script>
+</div><!-- /#site-box -->
+</body>
+</html>

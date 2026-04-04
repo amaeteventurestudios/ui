@@ -149,7 +149,7 @@
 
       setLoading(submitBtn, false);
       // Redirect to dedicated thank-you page
-      window.location.href = 'thank-you.html?type=participation';
+      window.location.href = '/thank-you.html?type=participation';
     });
   }
 
@@ -209,7 +209,7 @@
 
       setLoading(submitBtn, false);
       // Redirect to dedicated thank-you page
-      window.location.href = 'thank-you.html?type=inquiry';
+      window.location.href = '/thank-you.html?type=inquiry';
     });
   }
 
