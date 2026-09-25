@@ -213,4 +213,60 @@
     });
   }
 
+  // ============================================================
+  // AI LAB PILOT REQUEST FORM (ai-lab.html)
+  // ============================================================
+  const pilotForm = document.getElementById('pilotForm');
+
+  if (pilotForm) {
+    const fields = ['fullName', 'organization', 'email', 'institutionType', 'message'];
+
+    fields.forEach(function (id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('blur', function () { validateField(el); });
+        el.addEventListener('input', function () {
+          const errEl = document.getElementById(id + 'Error');
+          if (errEl && errEl.style.display === 'block') validateField(el);
+        });
+      }
+    });
+
+    pilotForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      let isValid = true;
+      fields.forEach(function (id) {
+        const el = document.getElementById(id);
+        if (el && !validateField(el)) isValid = false;
+      });
+      if (!isValid) return;
+
+      const submitBtn = document.getElementById('submitBtn');
+      setLoading(submitBtn, true);
+
+      const data = {
+        _subject:         'New AI Lab Pilot Request — Umanah Institute',
+        form_type:        'AI Lab Pilot Request',
+        full_name:        document.getElementById('fullName').value.trim(),
+        organization:     document.getElementById('organization').value.trim(),
+        email:            document.getElementById('email').value.trim(),
+        role_title:       document.getElementById('roleTitle') ? document.getElementById('roleTitle').value.trim() : '',
+        institution_type: document.getElementById('institutionType').value,
+        approx_students:  document.getElementById('students') ? document.getElementById('students').value : '',
+        message:          document.getElementById('message').value.trim(),
+      };
+
+      try {
+        await submitToFormspree(data);
+        await persistRecord('ai_lab_pilot_requests', data);
+      } catch (err) {
+        console.warn('Submission error:', err);
+      }
+
+      setLoading(submitBtn, false);
+      window.location.href = '/thank-you.html?type=pilot';
+    });
+  }
+
 })();

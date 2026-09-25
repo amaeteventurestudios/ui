@@ -47,8 +47,8 @@
   --sp-10:  96px;
 
   /* ── Layout ───────────────────────────────────────────── */
-  --max-width:        1120px;
-  --box-width:        1100px;
+  --max-width:        1320px;
+  --box-width:        1320px;
   --box-shadow:       0 2px 24px rgba(0,0,0,0.08), 0 0 1px rgba(0,0,0,0.04);
   --pad-mobile:       24px;
   --pad-tablet:       32px;

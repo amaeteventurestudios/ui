@@ -168,6 +168,7 @@
           <div class="footer-links">
             <a href="convening.html">Convening</a>
             <a href="applied-engineering.html">Applied Engineering</a>
+            <a href="ai-lab.html">AI Lab</a>
             <a href="institutional-inquiry.html">Contact &amp; Institutional Inquiry</a>
             <a href="request-participation.html">Request Participation</a>
           </div>
@@ -190,7 +191,11 @@
       const msg     = document.getElementById('thankYouMessage');
       const note    = document.getElementById('thankYouNote');
 
-      if (type === 'inquiry') {
+      if (type === 'pilot') {
+        badge.textContent = 'AI Lab Pilot Request';
+        msg.textContent   = 'Your AI Lab pilot request has been received.';
+        note.textContent  = 'We read every request. While you wait, the live demo is open at ai.umanah.org.';
+      } else if (type === 'inquiry') {
         badge.textContent = 'Institutional Inquiry';
         msg.textContent   = 'Your institutional inquiry has been received.';
         note.textContent  = 'We will respond if there is a fit.';

@@ -1,0 +1,84 @@
+/* ============================================================
+   UMANAH AI LAB PAGE — same tokens, fonts and components as the rest of the site.
+   ============================================================ */
+.al-hero { padding: var(--sp-9) 0 var(--sp-8); text-align: center; background: var(--bg-base); }
+.al-eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-secondary); margin: 0 auto var(--sp-3); }
+.al-eyebrow span { margin: 0 .55em; color: var(--text-muted); }
+.al-hero h1 { font-size: clamp(2.6rem, 6.5vw, 4.4rem); letter-spacing: -.02em; }
+.al-sub { font-family: var(--font-heading); font-style: italic; font-size: clamp(1.15rem, 2.4vw, 1.6rem); color: var(--text-secondary); max-width: 34em; margin: var(--sp-3) auto var(--sp-4); }
+.al-lead { margin: 0 auto var(--sp-5); font-size: 1.05rem; line-height: 1.75; max-width: 60ch; }
+.al-cta { display: flex; gap: var(--sp-3); justify-content: center; flex-wrap: wrap; }
+.al-note { margin: var(--sp-3) auto var(--sp-7); font-size: .85rem; color: var(--text-muted); }
+.al-frame { margin: 0 auto; max-width: 1180px; border-radius: 16px; background: #fff; box-shadow: 0 10px 40px rgba(11,31,59,.14), 0 0 0 1px var(--border); overflow: hidden; }
+.al-frame-bar { display: flex; gap: 7px; padding: 11px 14px; background: #f1eee8; border-bottom: 1px solid var(--border); }
+.al-frame-bar i { width: 10px; height: 10px; border-radius: 50%; background: #d5d0c6; display: block; }
+.al-frame img { width: 100%; height: auto; display: block; }
+.al-caption { margin: var(--sp-3) auto 0; font-size: .82rem; color: var(--text-muted); text-align: center; }
+
+.al-band { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.al-two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-8); align-items: start; }
+.al-two h2 { margin-bottom: var(--sp-3); }
+.al-two p + p { margin-top: var(--sp-3); }
+.al-pull { font-family: var(--font-heading); font-style: italic; font-size: 1.2rem; color: var(--navy); line-height: 1.5; }
+.al-small { font-size: .84rem; color: var(--text-muted); }
+.al-h3 { margin-bottom: var(--sp-3); }
+
+.al-verbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-3); }
+.al-verbs li { border-radius: var(--card-radius); padding: var(--card-pad); border: 1px solid var(--border); box-shadow: var(--card-shadow); }
+.al-verbs h3 { margin-bottom: var(--sp-2); }
+.al-verbs p { font-size: .92rem; line-height: 1.55; }
+.v-ask { background: #F0F5FC; } .v-learn { background: #F4F7F3; } .v-build { background: #FCF7EE; } .v-explore { background: #F3F1FC; } .v-progress { background: #FBF1F2; }
+
+.al-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); }
+.al-shots figure { background: var(--bg-base); border: 1px solid var(--border); border-radius: var(--card-radius); overflow: hidden; box-shadow: var(--card-shadow); }
+.al-shots img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; border-bottom: 1px solid var(--border); }
+.al-shots figcaption { padding: var(--sp-3); font-size: .9rem; line-height: 1.5; color: var(--text-secondary); }
+
+.al-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); counter-reset: none; }
+.al-steps li { background: #fff; border: 1px solid var(--border); border-radius: var(--card-radius); padding: var(--card-pad); box-shadow: var(--card-shadow); }
+.al-steps span { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 600; margin-bottom: var(--sp-3); }
+.al-steps h3 { margin-bottom: var(--sp-2); }
+
+.al-checks { display: grid; gap: var(--sp-3); }
+.al-checks li { position: relative; padding-left: 28px; color: var(--text-secondary); line-height: 1.6; }
+.al-checks li::before { content: ""; position: absolute; left: 0; top: .45em; width: 14px; height: 14px; border-radius: 50%; background: var(--navy-tint); border: 2px solid var(--navy); }
+.al-checks .al-soon::before { border-style: dashed; background: transparent; }
+.al-checks .al-soon { color: var(--text-muted); font-style: italic; }
+
+.al-loop { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-bottom: var(--sp-8); }
+.al-loop li { padding: 10px 18px; border-radius: 999px; border: 1px solid var(--border-navy); background: #fff; font-weight: 500; color: var(--navy); position: relative; }
+.al-loop li:not(:last-child)::after { content: "\2192"; position: absolute; right: -15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+.al-loop li:not(:last-child) { margin-right: 12px; }
+.al-teacher { margin-top: var(--sp-4); }
+
+.al-configs { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-4); }
+.al-configs article { background: var(--bg-base); border: 1px solid var(--border); border-radius: var(--card-radius); padding: var(--card-pad); }
+.al-configs svg { width: 130px; height: auto; margin-bottom: var(--sp-3); }
+.al-configs h3 { margin-bottom: var(--sp-2); }
+.al-configs ul { margin-top: var(--sp-3); padding-left: 1.1rem; list-style: disc; color: var(--text-secondary); font-size: .92rem; line-height: 1.6; }
+.al-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-4); margin-top: var(--sp-7); padding-top: var(--sp-5); border-top: 1px solid var(--border); font-size: .9rem; color: var(--text-secondary); line-height: 1.55; }
+
+.al-form { background: var(--bg-base); border: 1px solid var(--border); border-radius: var(--card-radius); padding: var(--sp-5); display: grid; gap: var(--sp-3); }
+.al-form .form-group { display: grid; gap: 6px; }
+.al-form label { font-size: .85rem; font-weight: 500; color: var(--text-primary); }
+.al-form input, .al-form select, .al-form textarea { width: 100%; font: inherit; font-size: .95rem; padding: 11px 12px; border: 1px solid var(--border-navy); border-radius: 8px; background: #fff; color: var(--text-primary); }
+.al-form input:focus, .al-form select:focus, .al-form textarea:focus { outline: 2px solid var(--navy); outline-offset: 1px; }
+.al-form .field-error { font-size: .8rem; color: #B42318; display: none; }
+.al-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+.al-pilot .btn { justify-self: start; }
+
+.al-final { text-align: center; }
+.al-final h2 { margin: 0 auto var(--sp-5); max-width: 22ch; }
+
+@media (max-width: 1100px) { .al-verbs { grid-template-columns: repeat(2, 1fr); } .al-shots { grid-template-columns: repeat(2, 1fr); } .al-strip { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 860px) {
+  .al-hero { padding: var(--sp-8) 0 var(--sp-7); }
+  .al-two, .al-steps, .al-configs, .al-row { grid-template-columns: 1fr; gap: var(--sp-5); }
+  .al-shots { grid-template-columns: 1fr; }
+  .al-verbs { grid-template-columns: 1fr; }
+  .al-strip { grid-template-columns: 1fr; }
+  .al-loop li:not(:last-child) { margin-right: 0; }
+  .al-loop li:not(:last-child)::after { display: none; }
+  .al-form { padding: var(--sp-4); }
+}
+.al-steps, .al-loop { list-style: none; }

@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/ai-lab", "destination": "/ai-lab.html" }]
+}
