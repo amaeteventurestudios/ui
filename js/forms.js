@@ -84,6 +84,21 @@
   }
 
   // ============================================================
+  // SEND FAILED: say so, keep what the person typed, never show "thank you"
+  // ============================================================
+  function showSendError(btn) {
+    var el = document.getElementById('sendError');
+    if (!el) {
+      el = document.createElement('p');
+      el.id = 'sendError';
+      el.setAttribute('role', 'alert');
+      el.style.cssText = 'color:#B42318;font-size:.9rem;margin:12px 0 0;text-align:left';
+      btn.parentNode.insertBefore(el, btn.nextSibling);
+    }
+    el.textContent = "Your message could not be sent. Please check your connection and try again.";
+  }
+
+  // ============================================================
   // SHOW SUCCESS STATE
   // ============================================================
   function showSuccess(formEl, successEl) {
@@ -140,12 +155,16 @@
         motivation:        document.getElementById('motivation').value.trim(),
       };
 
+      var sent = false;
       try {
         await submitToFormspree(data);
+        sent = true;
         await persistRecord('participation_requests', data);
       } catch (err) {
         console.warn('Submission error:', err);
       }
+
+      if (!sent) { setLoading(submitBtn, false); showSendError(submitBtn); return; }
 
       setLoading(submitBtn, false);
       // Redirect to dedicated thank-you page
@@ -200,12 +219,16 @@
         message:           document.getElementById('message').value.trim(),
       };
 
+      var sent = false;
       try {
         await submitToFormspree(data);
+        sent = true;
         await persistRecord('institutional_inquiries', data);
       } catch (err) {
         console.warn('Submission error:', err);
       }
+
+      if (!sent) { setLoading(submitBtn, false); showSendError(submitBtn); return; }
 
       setLoading(submitBtn, false);
       // Redirect to dedicated thank-you page
@@ -257,12 +280,16 @@
         message:          document.getElementById('message').value.trim(),
       };
 
+      var sent = false;
       try {
         await submitToFormspree(data);
+        sent = true;
         await persistRecord('ai_lab_pilot_requests', data);
       } catch (err) {
         console.warn('Submission error:', err);
       }
+
+      if (!sent) { setLoading(submitBtn, false); showSendError(submitBtn); return; }
 
       setLoading(submitBtn, false);
       window.location.href = '/thank-you.html?type=pilot';

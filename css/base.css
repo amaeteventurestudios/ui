@@ -666,3 +666,20 @@ strong {
     flex: 1;
   }
 }
+
+/* Top nav: links centred in the space between the wordmark and the buttons (equal room on both sides) */
+@media (min-width: 769px) {
+  .nav-wordmark { margin-right: 0; }
+  .nav-links { justify-content: center; gap: 28px; margin: 0 var(--sp-4); }
+}
+@media (min-width: 1001px) and (max-width: 1240px) {
+  .nav-links { gap: 16px; }
+  .nav-actions .btn-secondary { display: none; }      /* "Contact" in the links already goes to the same page */
+}
+@media (min-width: 769px) and (max-width: 1000px) {  /* not enough room for six links and a button: use the menu */
+  .nav-links, .nav-actions { display: none; }
+  .nav-hamburger { display: flex; }
+}
+
+/* Form pages make <body> a flex column, which shrank the boxed wrapper (and the nav) to its content width. */
+body.form-page #site-box { width: 100%; }
