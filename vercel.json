@@ -1,3 +1,10 @@
 {
-  "rewrites": [{ "source": "/ai-lab", "destination": "/ai-lab.html" }]
+  "rewrites": [
+    { "source": "/ai-lab", "destination": "/ai-lab.html" },
+    { "source": "/ai-lab-film-95bc0e", "destination": "/ai-lab-film-95bc0e.html" }
+  ],
+  "headers": [
+    { "source": "/ai-lab-film-95bc0e(.html)?", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }] },
+    { "source": "/media/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }] }
+  ]
 }

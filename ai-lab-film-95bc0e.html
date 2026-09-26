@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Umanah AI Lab — Film</title>
+  <meta name="description" content="A short film about Umanah AI Lab." />
+  <!-- Unlisted: shared by link only. Nothing on the site links here and it is not in any sitemap. -->
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <style>
+    .film-main {
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-5);
+      padding: var(--sp-6) var(--pad-mobile);
+      text-align: center;
+    }
+    .film-main h1 {
+      font-size: 2rem;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.2;
+    }
+    .film-main p {
+      color: var(--text-secondary);
+      margin: 0;
+      max-width: 52ch;
+      line-height: 1.6;
+    }
+    .film-frame {
+      width: 100%;
+      max-width: min(1100px, calc((100vh - 360px) * 1.6));
+      min-width: min(100%, 560px);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border);
+      background: var(--navy);
+      aspect-ratio: 16 / 10;
+    }
+    .film-frame video {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .film-actions {
+      display: flex;
+      gap: var(--sp-3);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+<div id="site-box">
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-wordmark">Umanah Institute</a>
+      <div class="nav-actions">
+        <a href="ai-lab.html" class="btn btn-secondary">About the AI Lab</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="film-main">
+      <h1>Umanah AI Lab</h1>
+      <p>A school-owned AI learning lab. One box at school serves the whole class, even with the internet unplugged.</p>
+      <div class="film-frame">
+        <video controls playsinline preload="metadata" poster="media/ai-lab-film-95bc0e.jpg">
+          <source src="media/ai-lab-film-95bc0e.mp4" type="video/mp4" />
+          Your browser cannot play this video. <a href="media/ai-lab-film-95bc0e.mp4">Download it</a>.
+        </video>
+      </div>
+      <div class="film-actions">
+        <a href="https://ai.umanah.org" class="btn btn-primary">Try the live demo</a>
+        <a href="ai-lab.html#pilot" class="btn btn-secondary">Request a pilot</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-bottom">
+          <p class="footer-copy">&copy; Umanah Institute. All rights reserved.</p>
+          <a href="privacy-policy.html" class="footer-privacy">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
