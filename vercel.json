@@ -1,10 +1,13 @@
 {
   "rewrites": [
     { "source": "/ai-lab", "destination": "/ai-lab.html" },
-    { "source": "/ai-lab-film-95bc0e", "destination": "/ai-lab-film-95bc0e.html" }
+    { "source": "/ai-lab-film", "destination": "/ai-lab-film.html" }
+  ],
+  "redirects": [
+    { "source": "/ai-lab-film-95bc0e(.html)?", "destination": "/ai-lab-film", "permanent": true }
   ],
   "headers": [
-    { "source": "/ai-lab-film-95bc0e(.html)?", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }] },
+    { "source": "/ai-lab-film(.html)?", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }] },
     { "source": "/media/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }] }
   ]
 }
