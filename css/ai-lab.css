@@ -4,6 +4,8 @@
 .al-hero { padding: var(--sp-9) 0 var(--sp-8); text-align: center; background: var(--bg-base); }
 .al-eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-secondary); margin: 0 auto var(--sp-3); }
 .al-eyebrow span { margin: 0 .55em; color: var(--text-muted); }
+.al-eyebrow .al-eb-wide { margin: 0; color: inherit; }
+@media (max-width: 767px) { .al-eyebrow .al-eb-wide { display: none; } }
 .al-hero h1 { font-size: clamp(2.1rem, 6.5vw, 4.4rem); letter-spacing: -.02em; }
 .al-nw { white-space: nowrap; }
 .al-sub { font-family: var(--font-heading); font-style: italic; font-size: clamp(1.15rem, 2.4vw, 1.6rem); color: var(--text-secondary); max-width: 34em; margin: var(--sp-3) auto var(--sp-4); }
